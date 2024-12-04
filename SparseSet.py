@@ -25,8 +25,8 @@ class SparseSet:
         self.size -= 1
 
     def contains(self, x):
-        return 0 <= x < self.n and self.sparse[x] < self.size and self.dense[self.sparse[x]] == x
-
+        return 0 <= x < self.n and self.sparse[x] != -1 and self.sparse[x] < self.size and self.dense[
+            self.sparse[x]] == x
     def visualize(self, operation=None, subtitle=None):
         fig, ax = plt.subplots(2, 1, figsize=(10, 6))
 
